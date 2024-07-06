@@ -78,7 +78,6 @@ export class InputPanel extends React.Component {
     // Обработчик нажатия на кнопку отправки файла и выполнение запроса
     handleSendFileByURLClick = async () => {
         const fileName = this.state.fileURL.match(/\w+\.\w+$/) != null && this.state.fileURL.match(/\w+\.\w+$/) ? this.state.fileURL.match(/\w+\.\w+$/)[0] : 'test.jpg'
-        console.log(fileName)
         const content = await sendFileByURL(this.state.idInstance, this.state.apiTokenInstance, this.state.phoneNumberFile, this.state.fileURL, fileName);
         this.props.onChange(content);
     }

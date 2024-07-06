@@ -97,8 +97,6 @@ export async function sendFileByURL(idInstance, apiTokenInstance, phoneNumber, f
         })
     };
 
-    console.log(body)
-
     const data = await fetchData(url, body);
     return data;
 }
