@@ -2,7 +2,7 @@
 
 В этом репозитории представлен исходный код тестового задания для представителей компании "Green API".
 
-Стек: `React`, `Docker`.
+Стек: `React`, `Docker`, `Github Actions`.
 
 Страница доступна на хостинге [Github Pages](https://Raaaawrh.github.io/green-api-test-task/).
 

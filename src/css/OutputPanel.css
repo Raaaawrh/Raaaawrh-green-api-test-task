@@ -1,5 +1,6 @@
 .OutputPanel{
     width: 50%;
+    min-width: 300px;
     box-sizing: border-box;
     background-color: #f9f9f9;
     overflow-y: scroll;

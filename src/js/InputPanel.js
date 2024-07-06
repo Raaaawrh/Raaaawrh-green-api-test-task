@@ -85,9 +85,9 @@ export class InputPanel extends React.Component {
     render() {
         return (
             <div className="InputPanel">
-                <Label text="idInstanceChange" />
+                <Label text="ID Instance" />
                 <ProtectedField id="idInstanceChange" onChange={this.handleIdInstanceChange} />
-                <Label text="apiTokenInstanceChange" />
+                <Label text="API Token Instance" />
                 <ProtectedField id="apiTokenInstanceChange" onChange={this.handleApiTokenInstanceChange} />
                 <Button text="GetSettings" onClick={this.handleGetSettingsClick} />
                 <Button text="GetStateInstance" onClick={this.handleGetStateInstanceClick} />

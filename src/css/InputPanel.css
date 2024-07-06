@@ -1,8 +1,8 @@
 @import "./Input.css";
 
-.ProtectedField{
-    width: 90%;
-    margin-left: 5%;
+.InputPanel{
+    width: 50%;
+    min-width: 300px;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #0f0f0f;

@@ -3,7 +3,7 @@ import React from "react";
 import '../css/Button.css';
 
 /**
- * Компонент кнопки GetSettings.
+ * Компонент кнопки.
  */
 export class Button extends React.Component {
     render() {

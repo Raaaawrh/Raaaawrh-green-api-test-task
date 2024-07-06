@@ -20,7 +20,8 @@ export class ProtectedField extends React.Component {
         this.setState({ content });
         this.props.onChange(content);
     }
-
+    
+    // Обработчик переключения маскировки ввода
     handleButtonClick = () => {
         this.setState({showContent: !this.state.showContent})
     }
