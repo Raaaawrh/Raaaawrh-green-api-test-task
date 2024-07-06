@@ -13,9 +13,9 @@ class App extends React.Component {
 		}
 	}
 
+	// Обработчик получаемых запросов для перенаправления в панель вывода.
 	handleInputContentChange = (inputContent) => {
 		this.setState({ content: JSON.stringify(inputContent, null, 2) });
-		console.log(inputContent);
 	}
 
 	render() {

@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/SendFileByURL.css';
 
+/**
+ * Компонент отправки файла. Содержит текстовые поля и кпопку для отправки.
+ */
 export class SendFileByURL extends React.Component {
     constructor(props) {
         super(props);
@@ -11,12 +14,14 @@ export class SendFileByURL extends React.Component {
         };
     }
 
+    // Обработчик изменения Phone Number.
     handlePhoneNumberCharge = (e) => {
         const phoneNumber = e.target.value;
         this.setState({ phoneNumber });
         this.props.onPhoneNumberChange(phoneNumber);
     }
 
+    // Обработчик изменения File URL.
     handleFileURLChange = (e) => {
         const fileURL = e.target.value;
         this.setState({ fileURL });

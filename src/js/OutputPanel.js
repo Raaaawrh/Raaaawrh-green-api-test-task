@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/OutputPanel.css';
 
+/**
+ * Компонент панели вывода.
+ */
 export class OutputPanel extends React.Component {
     render() {
         return (

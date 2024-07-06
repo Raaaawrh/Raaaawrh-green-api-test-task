@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/GetSettings.css';
 
+/**
+ * Компонент кнопки GetSettings.
+ */
 export class GetSettings extends React.Component {
     render() {
         return (

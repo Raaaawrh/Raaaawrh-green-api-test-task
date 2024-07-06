@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/GetStateInstance.css';
 
+/**
+ * Компонент кнопки GetStateInstance.
+ */
 export class GetStateInstance extends React.Component {
     render() {
         return (

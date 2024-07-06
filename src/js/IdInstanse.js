@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/IdInstance.css';
 
+/**
+ * Компонент поля ввода ID.
+ */
 export class IdInstance extends React.Component {
 
     constructor(props) {

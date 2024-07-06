@@ -2,6 +2,9 @@ import React from "react";
 
 import '../css/ApiTokenInstance.css';
 
+/**
+ * Компонент поля ввода токена.
+ */
 export class ApiTokenInstance extends React.Component {
     constructor(props) {
         super(props);
@@ -10,6 +13,7 @@ export class ApiTokenInstance extends React.Component {
         };
     }
 
+    // Обработчик изменения текста в поле ввода.
     handleChange = (e) => {
         const apiTokenInstance = e.target.value;
         this.setState({ apiTokenInstance });
