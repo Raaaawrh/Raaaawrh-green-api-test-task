@@ -1,12 +1,12 @@
 import React from "react";
-import { IdInstance } from "./IdInstanse";
-import { ApiTokenInstance } from "./ApiTokenInstance";
-import { GetSettings } from "./GetSettings";
-import { GetStateInstance } from './GetStateInstance';
-import { SendMessage } from './SendMessage';
-import { SendFileByURL } from './SendFileByURL';
 
 import { getSettingsRequest, getStateInstanceRequest, sendFileByURL, sendMessage } from './Api'
+
+import { Label } from "./Label";
+import { Button } from "./Button";
+import { ProtectedField } from "./ProtectedField";
+import { SendMessage } from './SendMessage';
+import { SendFileByURL } from './SendFileByURL';
 
 import '../css/InputPanel.css';
 
@@ -85,10 +85,12 @@ export class InputPanel extends React.Component {
     render() {
         return (
             <div className="InputPanel">
-                <IdInstance onChange={this.handleIdInstanceChange} />
-                <ApiTokenInstance onChange={this.handleApiTokenInstanceChange} />
-                <GetSettings onClick={this.handleGetSettingsClick} />
-                <GetStateInstance onClick={this.handleGetStateInstanceClick} />
+                <Label text="idInstanceChange" />
+                <ProtectedField id="idInstanceChange" onChange={this.handleIdInstanceChange} />
+                <Label text="apiTokenInstanceChange" />
+                <ProtectedField id="apiTokenInstanceChange" onChange={this.handleApiTokenInstanceChange} />
+                <Button text="GetSettings" onClick={this.handleGetSettingsClick} />
+                <Button text="GetStateInstance" onClick={this.handleGetStateInstanceClick} />
                 <SendMessage onPhoneNumberChange={this.handlePhoneMessageChange} onMessageTextChange={this.handleMessadeTextChange} onClick={this.handleSendMessageClick} />
                 <SendFileByURL onPhoneNumberChange={this.handlePhoneFileChange} onFileURLChange={this.handleFileURLChange} onClick={this.handleSendFileByURLClick} />
             </div>

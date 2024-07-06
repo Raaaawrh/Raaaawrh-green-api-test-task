@@ -1,6 +1,7 @@
 import React from "react";
 
 import '../css/SendFileByURL.css';
+import { Button } from "./Button";
 
 /**
  * Компонент отправки файла. Содержит текстовые поля и кпопку для отправки.
@@ -33,7 +34,7 @@ export class SendFileByURL extends React.Component {
             <div className="SendFileByURL">
                 <input type="text" placeholder="Phone Number (Only Digits)" onChange={this.handlePhoneNumberCharge} />
                 <input type="text" placeholder="https://mysite.com/img/horse.png" onChange={this.handleFileURLChange} />
-                <button onClick={this.props.onClick}>Send File By URL</button>
+                <Button text="Send File By URL" onClick={this.props.onClick}/>
             </div>
         );
     }

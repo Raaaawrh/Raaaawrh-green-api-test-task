@@ -1,6 +1,5 @@
-@import './basic/Input.css';
-@import './basic/Button.css';
-
+@import './Input.css';
+@import './Button.css';
 
 .SendFileByURL {
     margin: 2%;

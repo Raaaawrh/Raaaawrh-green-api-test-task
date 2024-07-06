@@ -1,0 +1,25 @@
+.ProtectedField {
+    width: 90%;
+    padding: 10px;
+
+    border: 1px solid #0f0f0f;
+    border-radius: 5px;
+}
+
+.ProtectedFieldPair {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px
+}
+
+.ProtectedFieldButton {
+    height: auto;
+    width: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.ProtectedFieldButton:hover {
+    background-color: #0056b3;
+}

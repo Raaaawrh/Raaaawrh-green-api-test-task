@@ -1,6 +1,5 @@
-@import "./Input.css";
-
-.ProtectedField{
+input,
+textarea {
     width: 90%;
     margin-left: 5%;
     padding: 20px;

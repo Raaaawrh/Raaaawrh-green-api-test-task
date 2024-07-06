@@ -1,7 +1,8 @@
-button {
-    width: calc(90%);
+.Button {
+    width: 90%;
     padding: 10px;
-    margin: 5px;
+    margin-left: 5%;
+    margin-top: 10px;
 
     background-color: #007BFF;
     color: #fff;
@@ -12,6 +13,6 @@ button {
     text-align: center;
 }
 
-button:hover {
+.Button:hover {
     background-color: #0056b3;
 }

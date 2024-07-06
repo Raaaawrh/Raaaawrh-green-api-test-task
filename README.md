@@ -59,6 +59,7 @@ V22.4.0
 - Дебаг сборка
 
 ```bash
+npm ci
 npm run build
 npm run start
 ```
@@ -66,6 +67,7 @@ npm run start
 - Релизная сборка
 
 ```bash
+npm ci
 npm run build
 npm install -g serve
 serve -s build
@@ -80,6 +82,7 @@ serve -s build
 - Дебаг сборка
 
 ```bash
+npm ci
 npm run build
 npm run start
 ```
@@ -87,6 +90,7 @@ npm run start
 - Релизная сборка
 
 ```bash
+npm ci
 npm run build
 npm install -g serve
 serve -s build

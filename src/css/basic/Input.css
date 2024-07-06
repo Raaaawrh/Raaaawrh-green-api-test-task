@@ -1,8 +1,0 @@
-input[type="text"], textarea {
-    width: calc(90%);
-    padding: 10px;
-    margin: calc(0%);
-
-    border: 1px solid #0f0f0f;
-    border-radius: 5px;
-}

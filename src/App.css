@@ -25,6 +25,7 @@ body {
 }
 
 .container{
+    padding: 2%;
     display: flex;
     justify-content: space-between;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 
 import '../css/SendMessage.css';
+import { Button } from "./Button";
 
 /**
  * Обработчик отправки сообщения. Содержит поля ввода и кнопку для отправки сообщения.
@@ -33,7 +34,7 @@ export class SendMessage extends React.Component {
             <div className="SendMessage">
                 <input type="text" placeholder="Phone Number (Only Digits)" onChange={this.handlePhoneNumberChange} />
                 <textarea placeholder="Type message text here." onChange={this.handleMessageTextChange}></textarea>
-                <button onClick={this.props.onClick}>Send Message</button>
+                <Button text="Send Message" onClick={this.props.onClick}/>
             </div>
         );
     }
