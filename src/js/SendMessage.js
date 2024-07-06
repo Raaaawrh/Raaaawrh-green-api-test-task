@@ -31,7 +31,7 @@ export class SendMessage extends React.Component {
     render() {
         return (
             <div className="SendMessage">
-                <input type="text" placeholder="xxxxxxxxxxx" onChange={this.handlePhoneNumberChange} />
+                <input type="text" placeholder="Phone Number (Only Digits)" onChange={this.handlePhoneNumberChange} />
                 <textarea placeholder="Type message text here." onChange={this.handleMessageTextChange}></textarea>
                 <button onClick={this.props.onClick}>Send Message</button>
             </div>
