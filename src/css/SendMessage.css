@@ -1,0 +1,8 @@
+@import './basic/Input.css';
+@import './basic/Button.css';
+
+.SendMessage {
+    margin: 2%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}

@@ -1,0 +1,12 @@
+.OutputPanel{
+    width: 50%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border: 1px solid #ddd;
+    display: flex;
+    padding: 2%;
+}
+
+/* pre {} */

@@ -1,0 +1,6 @@
+.InputPanel{
+    width: 50%;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}

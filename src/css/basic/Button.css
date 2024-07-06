@@ -1,0 +1,17 @@
+button {
+    width: calc(90%);
+    padding: 10px;
+    margin: 5px;
+
+    background-color: #007BFF;
+    color: #fff;
+    
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
