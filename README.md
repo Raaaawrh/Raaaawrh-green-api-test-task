@@ -1,9 +1,11 @@
 # Green API Test Task
 
 В этом репозитории представлен исходный код тестового задания для представителей компании [Green API](https://green-api.com/).
-|       |       |       |       |       |
-| ----- | ----- | ----- | ----- | ----- |
-|Стек:| <img src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="JavaScript" width="40px" height="40px">| <a href="https://react.dev/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React" width="40px" height="40px"></a> | <a href="https://www.npmjs.com/" title="NPM"><img src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg" alt="NPM" width="40px" height="40px"></a> | <a href="https://www.docker.com/" title="Docker"><img src="https://github.com/get-icon/geticon/raw/master/icons/docker.svg" alt="NPM" width="40px" height="40px"></a>|
+
+### Стек
+| JavaScript | React | NPM | Docker |
+| :-----: | :-----: | :-----: | :-----: |
+|<img src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="JavaScript" width="40px" height="40px">| <a href="https://react.dev/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React" width="40px" height="40px"></a> | <a href="https://www.npmjs.com/" title="NPM"><img src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg" alt="NPM" width="40px" height="40px"></a> | <a href="https://www.docker.com/" title="Docker"><img src="https://github.com/get-icon/geticon/raw/master/icons/docker.svg" alt="NPM" width="40px" height="40px"></a>|
 
 Страница доступна на хостинге [Github Pages](https://Raaaawrh.github.io/green-api-test-task/).
 
