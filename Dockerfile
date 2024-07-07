@@ -2,17 +2,20 @@ FROM node:22-alpine
 
 LABEL Author="anatolii.farenik@yandex.com"
 
-WORKDIR /app
+WORKDIR /opt/app
 
-#~~~~~~~~~~ Install packages ~~~~~~~~~~#
+#~~~~~~~~~~ Copy all files ~~~~~~~~~~#
 COPY package.json package-lock.json ./
-RUN npm ic
-
-#~~~~~~~~~~ Build the project ~~~~~~~~~~#
 COPY public ./public/
 COPY src ./src/
 
-RUN npm run build
+#~~~~~~~~~~ Change the user to node for security purpose ~~~~~~~~~~#
+RUN chown -R node:node .
+USER node
+
+#~~~~~~~~~~ Install packages & Build the project ~~~~~~~~~~#
+RUN npm ic && \
+    npm run build
 
 #~~~~~~~~~~ Expose port ~~~~~~~~~~#
 EXPOSE 3000
