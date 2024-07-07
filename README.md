@@ -18,9 +18,12 @@
 - [sendMessage](https://green-api.com/docs/api/sending/SendMessage/)
 - [sendFileByUrl](https://green-api.com/docs/api/sending/SendFileByUrl/)
 
-Пользователь вводит свои данные свои IDInstance, APITokenInstance в соответсвующие защищенные поля и может вызывать методы  API getSettings и getStateInstance.
+Пользователь вводит свои данные свои IDInstance, APITokenInstance в соответствующие защищенные поля и может вызывать методы Green API.
 
-После пользователь вводит номера телефонов, тест сообщения и ссылку на файл и может отправить текстовое сообщение/файл в чат, определенный номером телефона с помощью методов API sendMessage и sendFileByUrl.
+1. `getSettings` : возвращает настройки аккаунта Green API. Требует `idInstance` и `apiTokenInstance`
+2. `getStateInstance` : возвращает информацию о состоянии аккаунта Green API. Требует `idInstance` и `apiTokenInstance`
+3. `sendMessage` : осуществляет отправку сообщения в указанный чат. Требует `idInstance`, `apiTokenInstance`, `phoneNumber`, `messageText`. Возвращает ID сообщения.
+4. `sendFileByUrl`: осуществляет отправку файла по его URL в указанный чат. Требует `idInstance`, `apiTokenInstance`, `phoneNumber`, `fileURL` и опционально можно указать желаемое имя файла. Возвращает ID сообщения.
 
 Ответы серверов на запросы появляются в поле 'Response'.
 
@@ -79,6 +82,8 @@ docker run green-api-test-task
 
 ### 2. Conda
 
+В системе должен быть установлен пакетный менеджер [conda](https://github.com/conda/conda) или [mamba](https://github.com/conda-forge/miniforge).
+
 Для установки используется канал `conda-forge`.
 
 Создать виртуальное окружение и активировать его.
@@ -113,7 +118,7 @@ npm run start
 
 - Релизная сборка
 
-Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !
+**Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !**
 
 ```bash
 npm ci
@@ -138,7 +143,7 @@ npm run start
 
 - Релизная сборка
 
-Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !
+**Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !**
 
 ```bash
 npm ci
