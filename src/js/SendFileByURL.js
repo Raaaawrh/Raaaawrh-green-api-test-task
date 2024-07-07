@@ -34,7 +34,7 @@ export class SendFileByURL extends React.Component {
             <div className="SendFileByURL">
                 <input type="text" placeholder="Phone Number (Only Digits)" onChange={this.handlePhoneNumberCharge} />
                 <input type="text" placeholder="https://mysite.com/img/horse.png" onChange={this.handleFileURLChange} />
-                <Button text="Send File By URL" onClick={this.props.onClick}/>
+                <Button text="sendFileByURL" onClick={this.props.onClick}/>
             </div>
         );
     }

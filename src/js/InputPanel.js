@@ -2,7 +2,6 @@ import React from "react";
 
 import { getSettingsRequest, getStateInstanceRequest, sendFileByURL, sendMessage } from './Api'
 
-import { Label } from "./Label";
 import { Button } from "./Button";
 import { ProtectedField } from "./ProtectedField";
 import { SendMessage } from './SendMessage';
@@ -85,12 +84,10 @@ export class InputPanel extends React.Component {
     render() {
         return (
             <div className="InputPanel">
-                <Label text="ID Instance" />
-                <ProtectedField id="idInstanceChange" onChange={this.handleIdInstanceChange} />
-                <Label text="API Token Instance" />
-                <ProtectedField id="apiTokenInstanceChange" onChange={this.handleApiTokenInstanceChange} />
-                <Button text="GetSettings" onClick={this.handleGetSettingsClick} />
-                <Button text="GetStateInstance" onClick={this.handleGetStateInstanceClick} />
+                <ProtectedField placeholder="idInstance" id="idInstanceChange" onChange={this.handleIdInstanceChange} />
+                <ProtectedField placeholder="ApiTokenInstance" id="apiTokenInstanceChange" onChange={this.handleApiTokenInstanceChange} />
+                <Button text="getSettings" onClick={this.handleGetSettingsClick} />
+                <Button text="getStateInstance" onClick={this.handleGetStateInstanceClick} />
                 <SendMessage onPhoneNumberChange={this.handlePhoneMessageChange} onMessageTextChange={this.handleMessadeTextChange} onClick={this.handleSendMessageClick} />
                 <SendFileByURL onPhoneNumberChange={this.handlePhoneFileChange} onFileURLChange={this.handleFileURLChange} onClick={this.handleSendFileByURLClick} />
             </div>

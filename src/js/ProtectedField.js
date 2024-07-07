@@ -29,7 +29,7 @@ export class ProtectedField extends React.Component {
     render() {
         return (
             <div className="ProtectedFieldPair">
-                <input className="ProtectedField" id={this.props.id} type={this.state.showContent ? "text": "password"} value={this.state.content} onChange={this.handleChange}></input>
+                <input placeholder={this.props.placeholder} className="ProtectedField" id={this.props.id} type={this.state.showContent ? "text": "password"} value={this.state.content} onChange={this.handleChange}></input>
                 <button className="ProtectedFieldButton" onClick={this.handleButtonClick}/>
             </div>
         );
