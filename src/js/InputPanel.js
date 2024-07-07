@@ -22,9 +22,14 @@ export class InputPanel extends React.Component {
             phoneNumberMessage: '',
             messageText: '',
             phoneNumberFile: '',
-            fileURL: ''
+            fileURL: '',
+            fileName: 'aa'
         };
     }
+
+    /**
+     * Обработчики ввода : 
+     */
 
     // Обработчик изменения поля ID.
     handleIdInstanceChange = (idInstance) => {
@@ -56,6 +61,16 @@ export class InputPanel extends React.Component {
         this.setState({ fileURL });
     }
 
+    // Обработчик изменения поля File Name
+    handleFileNameChange = (fileName) => {
+        console.log(fileName);
+        this.setState({ fileName });
+    }
+
+    /** 
+     * Обработчики нажатий : 
+     */
+
     // Обработчик нажатия на кнопку получения настроек аккаунта и выполнение запроса.
     handleGetSettingsClick = async () => {
         const content = await getSettingsRequest(this.state.idInstance, this.state.apiTokenInstance);
@@ -76,9 +91,17 @@ export class InputPanel extends React.Component {
 
     // Обработчик нажатия на кнопку отправки файла и выполнение запроса
     handleSendFileByURLClick = async () => {
-        const fileName = this.state.fileURL.match(/\w+\.\w+$/) != null && this.state.fileURL.match(/\w+\.\w+$/) ? this.state.fileURL.match(/\w+\.\w+$/)[0] : 'test.jpg'
-        const content = await sendFileByURL(this.state.idInstance, this.state.apiTokenInstance, this.state.phoneNumberFile, this.state.fileURL, fileName);
-        this.props.onChange(content);
+        let fileName = this.state.fileName;
+        if (this.state.fileName === '') {
+            fileName = this.state.fileURL.match(/\w+\.\w+$/) != null && this.state.fileURL.match(/\w+\.\w+$/) ? this.state.fileURL.match(/\w+\.\w+$/)[0] : 'test.jpg'
+        }
+        if (fileName === '') {
+            throw new Error("Unable to parse filename from fileURL and Optional filename not provided!")
+        }
+        else {
+            const content = await sendFileByURL(this.state.idInstance, this.state.apiTokenInstance, this.state.phoneNumberFile, this.state.fileURL, fileName);
+            this.props.onChange(content);
+        }
     }
 
     render() {
@@ -89,7 +112,8 @@ export class InputPanel extends React.Component {
                 <Button text="getSettings" onClick={this.handleGetSettingsClick} />
                 <Button text="getStateInstance" onClick={this.handleGetStateInstanceClick} />
                 <SendMessage onPhoneNumberChange={this.handlePhoneMessageChange} onMessageTextChange={this.handleMessadeTextChange} onClick={this.handleSendMessageClick} />
-                <SendFileByURL onPhoneNumberChange={this.handlePhoneFileChange} onFileURLChange={this.handleFileURLChange} onClick={this.handleSendFileByURLClick} />
+                <SendFileByURL onPhoneNumberChange={this.handlePhoneFileChange} onFileURLChange={this.handleFileURLChange}
+                    onFileNameChange={this.handleFileNameChange} onClick={this.handleSendFileByURLClick} />
             </div>
         );
     }
