@@ -26,8 +26,8 @@ class App extends React.Component {
 						<InputPanel onChange={this.handleInputContentChange} />
 						<OutputPanel content={this.state.content} />
 					</div>
-				</header>
-			</div>
+				</header >
+			</div >
 		);
 	}
 }
