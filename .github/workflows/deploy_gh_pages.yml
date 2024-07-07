@@ -1,0 +1,29 @@
+name: Deploy to GitHub Pages
+
+on:
+    workflow_dispatch:
+    push:
+        branches: [ "main" ]
+        paths:
+        - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          name: build-artifacts
+          workflow: Build And Test Node.js
+          path: .
+
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
