@@ -8,6 +8,7 @@ WORKDIR /opt/app
 COPY package.json package-lock.json ./
 COPY public ./public/
 COPY src ./src/
+COPY .env .
 
 #~~~~~~~~~~ Change the user to node for security purpose ~~~~~~~~~~#
 RUN chown -R node:node .

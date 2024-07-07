@@ -37,12 +37,38 @@ git clone https://github.com/Raaaawrh/green-api-test-task/tree/main
 cd green-api-test-task
 ```
 
+### API URL
+
+Вы можете использовать свой API URL для выполнения запросов. Есть 2 способа.
+
+1. Файл `.env` (Рекомендуемый способ)
+
+ Просто отредактируйте файл `.env`, чтобы в нем была строка `REACT_APP_API_URL=ваш_API_URL`. Или выполните в командной строке:
+
+```bash
+echo REACT_APP_API_URL{ваш_API_URL} > .env # Linux, Windows CMD или MacOS
+echo "REACT_APP_API_URL{ваш_API_URL}" > .env # Windows PowerShell
+```
+
+2. Прямое указание (только Conda и нативный способ установки)
+
+Вы можете напрямую указывать используемое значение API_URL при вызовах npm:
+
+```bash
+REACT_APP_API_URL=ваш_API_URL command # Linux, MacOS
+set "REACT_APP_API_URL=ваш_API_URL" && command # Windows CMD
+($env:REACT_APP_API_URL = "ваш_API_URL") -and (command) # Windows PowerShell
+```
+где command это одна из комманд `npm run build`, `npm run start` и `serve -s build`
+
+Далее рекомендуется использовать методы с использованием `Docker` или `Conda`.
+
 ### 1. Docker
 
 В системе должен быть установлен [Docker](https://www.docker.com/).
 
 
-Запустить сборку Docker образа. Дождаться сборки и запустить контейнер.
+Запустить сборку Docker образа. Дождаться ее звершения и запустить контейнер.
 
 ```bash
 docker build -t green-api-test-task .
@@ -87,6 +113,8 @@ npm run start
 
 - Релизная сборка
 
+Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !
+
 ```bash
 npm ci
 npm run build
@@ -110,6 +138,8 @@ npm run start
 
 - Релизная сборка
 
+Для запуска релизной сборки локально требуется удалить поле `"homepage"` в файле `package.json` !
+
 ```bash
 npm ci
 npm run build
@@ -118,3 +148,5 @@ serve -s build
 ```
 
 Страница будет доступна по адресам, которые появятся на экране.
+
+Протестировано на OS Fedora Linux 39 и в сервисе Github Actions.

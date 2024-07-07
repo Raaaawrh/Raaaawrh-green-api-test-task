@@ -4,7 +4,7 @@
  * 
  */
 
-const apiUrl = 'https://7103.api.greenapi.com'
+const apiUrl = process.env.REACT_APP_API_URL
 
 
 /**
