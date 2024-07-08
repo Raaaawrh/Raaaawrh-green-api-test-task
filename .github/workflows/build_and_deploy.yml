@@ -38,6 +38,10 @@ jobs:
         npm ci
         npm run build --if-present
         npm test
+    - 
+      name: Tar artifacts
+      if: ${{ matrix.node-version == '22.x' }}
+      run: tar -cvf artifacts.tar build/ node_modules/
     
     - 
       name: Upload build artifacts
@@ -46,8 +50,7 @@ jobs:
       with:
         name: build-artifacts
         path: |
-          build/**
-          node_modules/**
+          artifacts.tar
 
   build-docker:
     runs-on: ubuntu-latest
@@ -70,9 +73,13 @@ jobs:
         name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: build-artifacts
+          name: artifacts.tar
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: .
+
+      -
+        name: Untar atrifacts
+        run: tar -xvf artifacts.tar
 
       - 
         name: Deploy with gh-pages
