@@ -62,14 +62,19 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name:
+      - 
+        name: Checkout repository
+        uses: actions/checkout@v4
+      - 
+        name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: .
 
-      - name: Deploy with gh-pages
+      - 
+        name: Deploy with gh-pages
         run: |
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
